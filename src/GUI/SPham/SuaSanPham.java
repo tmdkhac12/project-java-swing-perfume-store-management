@@ -451,6 +451,7 @@ public class SuaSanPham extends javax.swing.JPanel {
             // Copy ảnh vào thư mục dự án
             File destination = new File("src/img_product/" + fileName);
             try {
+                lblAnhSanPham.setIcon(null);
                 Files.copy(selectedFile.toPath(), destination.toPath(), StandardCopyOption.REPLACE_EXISTING);
             } catch (IOException e) {
                 e.printStackTrace();

@@ -100,7 +100,7 @@ public class ThongKeDoanhThu extends JPanel {
     for (ThongKeDTO dto : list) {
         model.addRow(new Object[]{
             dto.getDate(),
-            dto.getCapital(),
+                decimalFormat.format(dto.getCapital()),
             decimalFormat.format(dto.getRevenue()),
                 decimalFormat.format(dto.getProfit())
         });
