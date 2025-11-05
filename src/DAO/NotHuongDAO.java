@@ -57,7 +57,7 @@ public class NotHuongDAO {
 
     public boolean isExistNotHuong(String name) {
         Connection connection = DBConnection.getConnection();
-        String sql = "select * from notes where note_name = ?";
+        String sql = "select * from notes where note_name = ? and is_deleted = 0";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -78,7 +78,7 @@ public class NotHuongDAO {
 
     public boolean isExistNotHuongExcept(String name, int id) {
         Connection connection = DBConnection.getConnection();
-        String sql = "select * from notes where note_name = ? and id <> ?";
+        String sql = "select * from notes where note_name = ? and id <> ? and is_deleted = 0";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);

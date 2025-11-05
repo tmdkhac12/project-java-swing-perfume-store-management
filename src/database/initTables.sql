@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 02, 2025 lúc 03:53 AM
+-- Thời gian đã tạo: Th10 06, 2025 lúc 12:55 AM
 -- Phiên bản máy phục vụ: 12.0.2-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -202,7 +202,8 @@ INSERT INTO `invoice` (`id`, `customer_id`, `employee_id`, `total`, `issue_date`
                                                                                       (6, 1, 1, 8800000, '2025-05-07 10:34:10'),
                                                                                       (7, 14, 1, 27000000, '2025-11-01 11:00:15'),
                                                                                       (8, 2, 1, 3250000, '2025-11-02 09:38:45'),
-                                                                                      (9, 3, 1, 10000000, '2025-11-02 09:48:51');
+                                                                                      (9, 3, 1, 10000000, '2025-11-02 09:48:51'),
+                                                                                      (10, 4, 1, 8800000, '2025-11-06 06:45:15');
 
 -- --------------------------------------------------------
 
@@ -228,6 +229,7 @@ INSERT INTO `invoicedetail` (`invoice_id`, `perfume_id`, `quantity`, `volume_id`
                                                                                       (9, 3, 2, 6),
                                                                                       (2, 4, 1, 6),
                                                                                       (6, 4, 2, 6),
+                                                                                      (10, 4, 2, 6),
                                                                                       (3, 5, 3, 6),
                                                                                       (7, 5, 10, 6),
                                                                                       (4, 6, 1, 6),
@@ -411,12 +413,12 @@ INSERT INTO `perfume_notes` (`perfume_id`, `note_id`, `type`) VALUES
                                                                   (9, 4, 'Heart'),
                                                                   (9, 26, 'Base'),
                                                                   (9, 30, 'Base'),
-                                                                  (10, 1, 'Heart'),
-                                                                  (10, 2, 'Heart'),
-                                                                  (10, 11, 'Top'),
-                                                                  (10, 12, 'Top'),
-                                                                  (10, 26, 'Base'),
-                                                                  (10, 30, 'Base'),
+                                                                  (10, 1, 'heart'),
+                                                                  (10, 2, 'heart'),
+                                                                  (10, 11, 'top'),
+                                                                  (10, 12, 'top'),
+                                                                  (10, 26, 'base'),
+                                                                  (10, 30, 'base'),
                                                                   (11, 5, 'base'),
                                                                   (11, 9, 'top'),
                                                                   (11, 12, 'heart');
@@ -443,7 +445,7 @@ INSERT INTO `perfume_volume` (`perfume_id`, `volume_id`, `price`, `stock`, `cost
                                                                                        (1, 6, 2500000, 0, 2000000),
                                                                                        (2, 6, 3200000, 0, 2700000),
                                                                                        (3, 6, 5000000, 48, 3500000),
-                                                                                       (4, 6, 4400000, 48, 4000000),
+                                                                                       (4, 6, 4400000, 46, 4000000),
                                                                                        (5, 6, 2700000, 107, 2200000),
                                                                                        (6, 6, 2800000, 50, 2400000),
                                                                                        (7, 6, 3600000, 50, 3000000),
@@ -477,7 +479,8 @@ INSERT INTO `promotion` (`id`, `name`, `discount_percent`, `start_date`, `end_da
                                                                                                        (3, 'Giảm giá Black Friday', 50, '2025-11-27 00:00:00', '2025-11-27 23:59:59', 0),
                                                                                                        (4, 'Khuyến mãi sinh nhật cửa hàng', 10, '2025-05-01 00:00:00', '2025-05-10 23:59:59', 0),
                                                                                                        (5, 'Giảm giá lễ Tết Nguyên Đán', 25, '2025-01-01 00:00:00', '2025-01-15 23:59:59', 0),
-                                                                                                       (10, 'Christmas', 15, '2025-04-08 00:00:00', '2025-04-10 23:59:59', 0);
+                                                                                                       (10, 'Christmas', 15, '2025-04-08 00:00:00', '2025-04-10 23:59:59', 0),
+                                                                                                       (11, 'Quốc tế thiếu nhi', 5, '2025-11-05 00:00:00', '2025-11-08 23:59:59', 0);
 
 -- --------------------------------------------------------
 
@@ -760,6 +763,12 @@ ALTER TABLE `importreceipt`
     MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
+-- AUTO_INCREMENT cho bảng `notes`
+--
+ALTER TABLE `notes`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+
+--
 -- AUTO_INCREMENT cho bảng `perfume`
 --
 ALTER TABLE `perfume`
@@ -769,7 +778,7 @@ ALTER TABLE `perfume`
 -- AUTO_INCREMENT cho bảng `promotion`
 --
 ALTER TABLE `promotion`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
