@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 02, 2025 lúc 03:11 AM
+-- Thời gian đã tạo: Th10 02, 2025 lúc 03:53 AM
 -- Phiên bản máy phục vụ: 12.0.2-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -141,7 +141,8 @@ INSERT INTO `importreceipt` (`id`, `supplier_id`, `import_date`, `total_cost`, `
                                                                                                  (3, 3, '2025-04-03 10:15:00', 33000000, 0),
                                                                                                  (4, 4, '2025-04-04 11:30:00', 44400000, 0),
                                                                                                  (5, 5, '2025-04-05 14:45:00', 33400000, 0),
-                                                                                                 (6, 1, '2025-05-07 10:36:56', 147400000, 0);
+                                                                                                 (6, 1, '2025-05-07 10:36:56', 147400000, 0),
+                                                                                                 (7, 1, '2025-11-02 09:13:17', 125000000, 0);
 
 -- --------------------------------------------------------
 
@@ -171,7 +172,8 @@ INSERT INTO `importreceiptdetail` (`import_receipt_id`, `perfume_id`, `quantity`
                                                                                                    (4, 7, 10, 6),
                                                                                                    (5, 8, 5, 6),
                                                                                                    (5, 9, 3, 6),
-                                                                                                   (5, 10, 2, 6);
+                                                                                                   (5, 10, 2, 6),
+                                                                                                   (7, 11, 50, 5);
 
 -- --------------------------------------------------------
 
@@ -198,7 +200,9 @@ INSERT INTO `invoice` (`id`, `customer_id`, `employee_id`, `total`, `issue_date`
                                                                                       (4, 4, 5, 10000000, '2025-04-04 14:20:00'),
                                                                                       (5, 5, 1, 10450000, '2025-04-05 16:15:00'),
                                                                                       (6, 1, 1, 8800000, '2025-05-07 10:34:10'),
-                                                                                      (7, 14, 1, 27000000, '2025-11-01 11:00:15');
+                                                                                      (7, 14, 1, 27000000, '2025-11-01 11:00:15'),
+                                                                                      (8, 2, 1, 3250000, '2025-11-02 09:38:45'),
+                                                                                      (9, 3, 1, 10000000, '2025-11-02 09:48:51');
 
 -- --------------------------------------------------------
 
@@ -221,6 +225,7 @@ INSERT INTO `invoicedetail` (`invoice_id`, `perfume_id`, `quantity`, `volume_id`
                                                                                       (1, 1, 2, 6),
                                                                                       (2, 2, 1, 6),
                                                                                       (1, 3, 1, 6),
+                                                                                      (9, 3, 2, 6),
                                                                                       (2, 4, 1, 6),
                                                                                       (6, 4, 2, 6),
                                                                                       (3, 5, 3, 6),
@@ -228,7 +233,8 @@ INSERT INTO `invoicedetail` (`invoice_id`, `perfume_id`, `quantity`, `volume_id`
                                                                                       (4, 6, 1, 6),
                                                                                       (4, 7, 2, 6),
                                                                                       (5, 8, 2, 6),
-                                                                                      (5, 10, 1, 6);
+                                                                                      (5, 10, 1, 6),
+                                                                                      (8, 10, 1, 6);
 
 -- --------------------------------------------------------
 
@@ -436,15 +442,15 @@ CREATE TABLE `perfume_volume` (
 INSERT INTO `perfume_volume` (`perfume_id`, `volume_id`, `price`, `stock`, `cost`) VALUES
                                                                                        (1, 6, 2500000, 0, 2000000),
                                                                                        (2, 6, 3200000, 0, 2700000),
-                                                                                       (3, 6, 5000000, 50, 3500000),
+                                                                                       (3, 6, 5000000, 48, 3500000),
                                                                                        (4, 6, 4400000, 48, 4000000),
                                                                                        (5, 6, 2700000, 107, 2200000),
                                                                                        (6, 6, 2800000, 50, 2400000),
                                                                                        (7, 6, 3600000, 50, 3000000),
                                                                                        (8, 6, 3600000, 50, 2800000),
                                                                                        (9, 6, 5510000, 50, 4600000),
-                                                                                       (10, 6, 3250000, 50, 2800000),
-                                                                                       (11, 5, 3700000, 0, 2500000);
+                                                                                       (10, 6, 3250000, 49, 2800000),
+                                                                                       (11, 5, 3700000, 0, 1500000);
 
 -- --------------------------------------------------------
 
@@ -748,10 +754,16 @@ ALTER TABLE `employee`
     MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT cho bảng `importreceipt`
+--
+ALTER TABLE `importreceipt`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT cho bảng `perfume`
 --
 ALTER TABLE `perfume`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `promotion`

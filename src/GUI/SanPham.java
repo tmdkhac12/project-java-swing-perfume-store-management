@@ -275,7 +275,7 @@ public class SanPham extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Xóa sản phẩm thành công!");
             loadTableSanPham(); // cập nhật lại bảng
         } else {
-            JOptionPane.showMessageDialog(this, "Xóa thất bại!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Không thể xóa vì sản phẩm có tồn tại trong các hóa đơn nhập xuất trước đó!", "Lỗi", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnXoaSPActionPerformed
 

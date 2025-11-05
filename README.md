@@ -1,1 +1,5 @@
-Nhớ tạo lại DB nếu commit message có "Update DB nhé", vì dữ liệu trong các row/column của table sẽ có thay đổi (thêm trạng thái để thực hiện chức năng xóa chứ không thêm thuộc tính cho Table)
+Hướng dẫn cài đặt dự án:
+- Tạo db tên java_nuochoa (MySql)
+- Init tables thông qua file /src/database/initTables.sql 
+- Cài đặt toàn bộ thư viện cần thiết trong /libs 
+- Chạy dự án qua /src/run/Main.java 
