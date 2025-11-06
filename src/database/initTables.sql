@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th10 06, 2025 lúc 12:55 AM
+-- Thời gian đã tạo: Th10 06, 2025 lúc 01:10 AM
 -- Phiên bản máy phục vụ: 12.0.2-MariaDB
 -- Phiên bản PHP: 8.2.12
 
@@ -142,7 +142,8 @@ INSERT INTO `importreceipt` (`id`, `supplier_id`, `import_date`, `total_cost`, `
                                                                                                  (4, 4, '2025-04-04 11:30:00', 44400000, 0),
                                                                                                  (5, 5, '2025-04-05 14:45:00', 33400000, 0),
                                                                                                  (6, 1, '2025-05-07 10:36:56', 147400000, 0),
-                                                                                                 (7, 1, '2025-11-02 09:13:17', 125000000, 0);
+                                                                                                 (7, 1, '2025-11-02 09:13:17', 125000000, 0),
+                                                                                                 (8, 5, '2025-11-06 07:05:56', 7000000, 0);
 
 -- --------------------------------------------------------
 
@@ -165,6 +166,7 @@ INSERT INTO `importreceiptdetail` (`import_receipt_id`, `perfume_id`, `quantity`
                                                                                                    (1, 1, 10, 6),
                                                                                                    (1, 2, 5, 6),
                                                                                                    (2, 3, 8, 6),
+                                                                                                   (8, 3, 2, 6),
                                                                                                    (2, 4, 4, 6),
                                                                                                    (3, 5, 15, 6),
                                                                                                    (6, 5, 67, 6),
@@ -444,7 +446,7 @@ CREATE TABLE `perfume_volume` (
 INSERT INTO `perfume_volume` (`perfume_id`, `volume_id`, `price`, `stock`, `cost`) VALUES
                                                                                        (1, 6, 2500000, 0, 2000000),
                                                                                        (2, 6, 3200000, 0, 2700000),
-                                                                                       (3, 6, 5000000, 48, 3500000),
+                                                                                       (3, 6, 5000000, 50, 3500000),
                                                                                        (4, 6, 4400000, 46, 4000000),
                                                                                        (5, 6, 2700000, 107, 2200000),
                                                                                        (6, 6, 2800000, 50, 2400000),
@@ -586,7 +588,8 @@ INSERT INTO `supplier` (`id`, `name`, `phone`, `email`, `is_deleted`) VALUES
                                                                           (2, 'Elite Perfume Distributors', '0912345678', 'info@eliteperfume.com', 0),
                                                                           (3, 'Prestige Aroma', '0923456789', 'support@prestigearoma.com', 0),
                                                                           (4, 'Exclusive Scents Ltd.', '0934567890', 'service@exclusivescents.com', 0),
-                                                                          (5, 'Premium Essence Supply', '0945678901', 'sales@premiumessence.com', 0);
+                                                                          (5, 'Premium Essence Supply', '0945678901', 'sales@premiumessence.com', 0),
+                                                                          (6, 'NCC D', '093334567', 'a@gmail.com', 1);
 
 -- --------------------------------------------------------
 
@@ -760,7 +763,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT cho bảng `importreceipt`
 --
 ALTER TABLE `importreceipt`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `notes`
@@ -779,6 +782,12 @@ ALTER TABLE `perfume`
 --
 ALTER TABLE `promotion`
     MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT cho bảng `supplier`
+--
+ALTER TABLE `supplier`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
