@@ -52,7 +52,6 @@ public class KhachHang extends javax.swing.JPanel {
         btnSuaKH = new javax.swing.JButton();
         btnXoaKH = new javax.swing.JButton();
         btnChiTietKH = new javax.swing.JButton();
-        btnXuatExcel1KH = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtTimKiem = new javax.swing.JTextField();
         pnlCenter = new javax.swing.JPanel();
@@ -99,15 +98,6 @@ public class KhachHang extends javax.swing.JPanel {
             }
         });
         pnlTop.add(btnChiTietKH);
-
-        btnXuatExcel1KH.setText("Xuất excel");
-        btnXuatExcel1KH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnXuatExcel1KH.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnXuatExcel1KHActionPerformed(evt);
-            }
-        });
-        pnlTop.add(btnXuatExcel1KH);
 
         jLabel1.setText("Tìm kiếm :");
         pnlTop.add(jLabel1);
@@ -200,10 +190,6 @@ public class KhachHang extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnChiTietKHActionPerformed
 
-    private void btnXuatExcel1KHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXuatExcel1KHActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnXuatExcel1KHActionPerformed
-
     private void initAtt() {
         khachHangBUS = new KhachHangBUS();
     }
@@ -213,7 +199,6 @@ public class KhachHang extends javax.swing.JPanel {
         btnSuaKH.setIcon(new FlatSVGIcon("./res/icon/edit.svg"));
         btnXoaKH.setIcon(new FlatSVGIcon("./res/icon/delete.svg"));
         btnChiTietKH.setIcon(new FlatSVGIcon("./res/icon/detail.svg"));
-        btnXuatExcel1KH.setIcon(new FlatSVGIcon("./res/icon/export_excel.svg"));
     }
 
     private void setUpTable() {
@@ -319,7 +304,6 @@ public class KhachHang extends javax.swing.JPanel {
     private javax.swing.JButton btnSuaKH;
     private javax.swing.JButton btnThemKH;
     private javax.swing.JButton btnXoaKH;
-    private javax.swing.JButton btnXuatExcel1KH;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel pnlCenter;

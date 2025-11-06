@@ -58,7 +58,6 @@ public class SanPham extends javax.swing.JPanel {
         btnSuaSP = new javax.swing.JButton();
         btnXoaSP = new javax.swing.JButton();
         btnChiTietSP = new javax.swing.JButton();
-        btnXuatExcelSP = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtTimKiem = new javax.swing.JTextField();
         pnlCenter = new javax.swing.JPanel();
@@ -106,10 +105,6 @@ public class SanPham extends javax.swing.JPanel {
             }
         });
         pnlTop.add(btnChiTietSP);
-
-        btnXuatExcelSP.setText("Xuất excel");
-        btnXuatExcelSP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pnlTop.add(btnXuatExcelSP);
 
         jLabel1.setLabelFor(txtTimKiem);
         jLabel1.setText("Tìm kiếm :");
@@ -288,7 +283,7 @@ public class SanPham extends javax.swing.JPanel {
         btnSuaSP.setIcon(new FlatSVGIcon("./res/icon/edit.svg"));
         btnXoaSP.setIcon(new FlatSVGIcon("./res/icon/delete.svg"));
         btnChiTietSP.setIcon(new FlatSVGIcon("./res/icon/detail.svg"));
-        btnXuatExcelSP.setIcon(new FlatSVGIcon("./res/icon/export_excel.svg"));
+        
     }
 
     private void setUpTable() {
@@ -420,7 +415,6 @@ public class SanPham extends javax.swing.JPanel {
     private javax.swing.JButton btnSuaSP;
     private javax.swing.JButton btnThemSP;
     private javax.swing.JButton btnXoaSP;
-    private javax.swing.JButton btnXuatExcelSP;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel pnlCenter;

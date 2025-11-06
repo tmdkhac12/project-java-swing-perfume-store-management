@@ -56,7 +56,6 @@ public class NhanVien extends javax.swing.JPanel {
         btnSuaNV = new javax.swing.JButton();
         btnXoaNV = new javax.swing.JButton();
         btnChiTietNV = new javax.swing.JButton();
-        btnXuatExcelNV = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtTimKiem = new javax.swing.JTextField();
         pnlCenter = new javax.swing.JPanel();
@@ -100,14 +99,6 @@ public class NhanVien extends javax.swing.JPanel {
             }
         });
         pnlTop.add(btnChiTietNV);
-
-        btnXuatExcelNV.setText("Xuất excel");
-        btnXuatExcelNV.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnXuatExcelNVActionPerformed(evt);
-            }
-        });
-        pnlTop.add(btnXuatExcelNV);
 
         jLabel1.setText("Tìm kiếm :");
         pnlTop.add(jLabel1);
@@ -197,10 +188,6 @@ public class NhanVien extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnChiTietNVActionPerformed
 
-    private void btnXuatExcelNVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXuatExcelNVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnXuatExcelNVActionPerformed
-
     private void initAtt() {
         nhanVienBUS = new NhanVienBUS();
     }
@@ -210,7 +197,6 @@ public class NhanVien extends javax.swing.JPanel {
         btnSuaNV.setIcon(new FlatSVGIcon("./res/icon/edit.svg"));
         btnXoaNV.setIcon(new FlatSVGIcon("./res/icon/delete.svg"));
         btnChiTietNV.setIcon(new FlatSVGIcon("./res/icon/detail.svg"));
-        btnXuatExcelNV.setIcon(new FlatSVGIcon("./res/icon/export_excel.svg"));
     }
     
     private void setUpTable() {
@@ -298,7 +284,6 @@ public class NhanVien extends javax.swing.JPanel {
     private javax.swing.JButton btnSuaNV;
     private javax.swing.JButton btnThemNV;
     private javax.swing.JButton btnXoaNV;
-    private javax.swing.JButton btnXuatExcelNV;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel pnlCenter;
