@@ -168,13 +168,10 @@ public class ThemSanPham extends javax.swing.JPanel {
 
         jLabel3.setText("Nốt cuối");
 
-        txtnotdau.setEditable(false);
         txtnotdau.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtnotgiua.setEditable(false);
         txtnotgiua.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtnotcuoi.setEditable(false);
         txtnotcuoi.setBackground(new java.awt.Color(255, 255, 255));
 
         btnchonnotdau.setText("jButton1");

@@ -511,7 +511,6 @@ public class SuaSanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_btnnotdauActionPerformed
 
     private void btnnotgiuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnotgiuaActionPerformed
-        // TODO add your handling code here:
         NoteSelectorDialog dialog = new NoteSelectorDialog((JFrame) SwingUtilities.getWindowAncestor(this));
         dialog.setVisible(true);
         List<String> newNotes = dialog.getSelectedNotes();
@@ -539,7 +538,6 @@ public class SuaSanPham extends javax.swing.JPanel {
     }//GEN-LAST:event_btnnotgiuaActionPerformed
 
     private void btnnotcuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnotcuoiActionPerformed
-        // TODO add your handling code here:
         NoteSelectorDialog dialog = new NoteSelectorDialog((JFrame) SwingUtilities.getWindowAncestor(this));
         dialog.setVisible(true);
         List<String> newNotes = dialog.getSelectedNotes();
