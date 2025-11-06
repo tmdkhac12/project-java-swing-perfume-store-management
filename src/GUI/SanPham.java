@@ -14,8 +14,10 @@ import GUI.SPham.ChiTietSanPham;
 import GUI.SPham.SuaSanPham;
 import GUI.SPham.ThemSanPham;
 import com.formdev.flatlaf.extras.FlatSVGIcon;
+
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -29,7 +31,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
 /**
- *
  * @author Admin
  */
 public class SanPham extends javax.swing.JPanel {
@@ -123,24 +124,24 @@ public class SanPham extends javax.swing.JPanel {
         pnlCenter.setPreferredSize(new java.awt.Dimension(1200, 700));
 
         tblSanPham.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+                new Object[][]{
 
-            },
-            new String [] {
-                "Mã sản phẩm", "Tên sản phẩm", "Dung tích (ml)", "Số lượng tồn", "Giới tính", "Nồng độ", "Thương hiệu", "Giá nhập (VNĐ)", "Giá bán (VNĐ)"
-            }
+                },
+                new String[]{
+                        "Mã sản phẩm", "Tên sản phẩm", "Dung tích (ml)", "Số lượng tồn", "Giới tính", "Nồng độ", "Thương hiệu", "Giá nhập (VNĐ)", "Giá bán (VNĐ)"
+                }
         ));
         jScrollPane2.setViewportView(tblSanPham);
 
         javax.swing.GroupLayout pnlCenterLayout = new javax.swing.GroupLayout(pnlCenter);
         pnlCenter.setLayout(pnlCenterLayout);
         pnlCenterLayout.setHorizontalGroup(
-            pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1287, Short.MAX_VALUE)
+                pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1287, Short.MAX_VALUE)
         );
         pnlCenterLayout.setVerticalGroup(
-            pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+                pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
         );
 
         add(pnlCenter, java.awt.BorderLayout.CENTER);
@@ -283,7 +284,7 @@ public class SanPham extends javax.swing.JPanel {
         btnSuaSP.setIcon(new FlatSVGIcon("./res/icon/edit.svg"));
         btnXoaSP.setIcon(new FlatSVGIcon("./res/icon/delete.svg"));
         btnChiTietSP.setIcon(new FlatSVGIcon("./res/icon/detail.svg"));
-        
+
     }
 
     private void setUpTable() {
@@ -329,15 +330,15 @@ public class SanPham extends javax.swing.JPanel {
 
         for (SanPhamDTO p : list) {
             model.addRow(new Object[]{
-                p.getId(),
-                p.getName(),
-                p.getVolumeSize(), // giả sử bạn đã thêm getter setVolumeSize
-                p.getStock(),
-                p.getSex(),
-                p.getConcentration(),
-                p.getBrandName(), // giả sử bạn đã thêm brandName vào DTO
-                decimalFormat.format(p.getCost()),
-                decimalFormat.format(p.getPrice())
+                    p.getId(),
+                    p.getName(),
+                    p.getVolumeSize(), // giả sử bạn đã thêm getter setVolumeSize
+                    p.getStock(),
+                    p.getSex(),
+                    p.getConcentration(),
+                    p.getBrandName(), // giả sử bạn đã thêm brandName vào DTO
+                    decimalFormat.format(p.getCost()),
+                    decimalFormat.format(p.getPrice())
             });
         }
     }
@@ -355,15 +356,15 @@ public class SanPham extends javax.swing.JPanel {
             // Nếu không nhập gì thì hiển thị toàn bộ
             for (SanPhamDTO sp : danhSach) {
                 model.addRow(new Object[]{
-                    sp.getId(),
-                    sp.getName(),
-                    sp.getVolumeSize(),
-                    sp.getStock(),
-                    sp.getSex(),
-                    sp.getConcentration(),
-                    sp.getBrandName(),
-                    String.format("%,.0f", sp.getCost()),
-                    String.format("%,.0f", sp.getPrice())
+                        sp.getId(),
+                        sp.getName(),
+                        sp.getVolumeSize(),
+                        sp.getStock(),
+                        sp.getSex(),
+                        sp.getConcentration(),
+                        sp.getBrandName(),
+                        String.format("%,.0f", sp.getCost()),
+                        String.format("%,.0f", sp.getPrice())
                 });
             }
             return;
@@ -374,15 +375,15 @@ public class SanPham extends javax.swing.JPanel {
             for (SanPhamDTO sp : danhSach) {
                 if (sp.getId() == maTimKiem) {
                     model.addRow(new Object[]{
-                        sp.getId(),
-                        sp.getName(),
-                        sp.getVolumeSize(),
-                        sp.getStock(),
-                        sp.getSex(),
-                        sp.getConcentration(),
-                        sp.getBrandName(),
-                        String.format("%,.0f", sp.getCost()),
-                        String.format("%,.0f", sp.getPrice())
+                            sp.getId(),
+                            sp.getName(),
+                            sp.getVolumeSize(),
+                            sp.getStock(),
+                            sp.getSex(),
+                            sp.getConcentration(),
+                            sp.getBrandName(),
+                            String.format("%,.0f", sp.getCost()),
+                            String.format("%,.0f", sp.getPrice())
                     });
                 }
             }
@@ -390,15 +391,15 @@ public class SanPham extends javax.swing.JPanel {
             for (SanPhamDTO sp : danhSach) {
                 if (sp.getName().toLowerCase().contains(keyword.toLowerCase())) {
                     model.addRow(new Object[]{
-                        sp.getId(),
-                        sp.getName(),
-                        sp.getVolumeSize(),
-                        sp.getStock(),
-                        sp.getSex(),
-                        sp.getConcentration(),
-                        sp.getBrandName(),
-                        String.format("%,.0f", sp.getCost()),
-                        String.format("%,.0f", sp.getPrice())
+                            sp.getId(),
+                            sp.getName(),
+                            sp.getVolumeSize(),
+                            sp.getStock(),
+                            sp.getSex(),
+                            sp.getConcentration(),
+                            sp.getBrandName(),
+                            String.format("%,.0f", sp.getCost()),
+                            String.format("%,.0f", sp.getPrice())
                     });
                 }
             }

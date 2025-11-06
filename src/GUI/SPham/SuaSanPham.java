@@ -196,8 +196,18 @@ public class SuaSanPham extends javax.swing.JPanel {
         });
 
         btnnotgiua.setText("jButton1");
+        btnnotgiua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnnotgiuaActionPerformed(evt);
+            }
+        });
 
         btnnotcuoi.setText("jButton1");
+        btnnotcuoi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnnotcuoiActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlCenterLayout = new javax.swing.GroupLayout(pnlCenter);
         pnlCenter.setLayout(pnlCenterLayout);
@@ -361,7 +371,7 @@ public class SuaSanPham extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlTop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, 772, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -499,6 +509,62 @@ public class SuaSanPham extends javax.swing.JPanel {
             txtnotdau.setText(String.join(", ", currentNotes));
         }
     }//GEN-LAST:event_btnnotdauActionPerformed
+
+    private void btnnotgiuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnotgiuaActionPerformed
+        // TODO add your handling code here:
+        NoteSelectorDialog dialog = new NoteSelectorDialog((JFrame) SwingUtilities.getWindowAncestor(this));
+        dialog.setVisible(true);
+        List<String> newNotes = dialog.getSelectedNotes();
+
+        if (newNotes != null && !newNotes.isEmpty()) {
+            String currentText = txtnotgiua.getText().trim();
+            List<String> currentNotes = new ArrayList<>();
+
+            if (!currentText.isEmpty()) {
+                // Tách theo dấu ',' và loại bỏ khoảng trắng thừa
+                for (String note : currentText.split(",")) {
+                    currentNotes.add(note.trim());
+                }
+            }
+
+            // Thêm các nốt mới nếu chưa có
+            for (String newNote : newNotes) {
+                if (!currentNotes.contains(newNote)) {
+                    currentNotes.add(newNote);
+                }
+            }
+
+            txtnotgiua.setText(String.join(", ", currentNotes));
+        }
+    }//GEN-LAST:event_btnnotgiuaActionPerformed
+
+    private void btnnotcuoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnnotcuoiActionPerformed
+        // TODO add your handling code here:
+        NoteSelectorDialog dialog = new NoteSelectorDialog((JFrame) SwingUtilities.getWindowAncestor(this));
+        dialog.setVisible(true);
+        List<String> newNotes = dialog.getSelectedNotes();
+
+        if (newNotes != null && !newNotes.isEmpty()) {
+            String currentText = txtnotcuoi.getText().trim();
+            List<String> currentNotes = new ArrayList<>();
+
+            if (!currentText.isEmpty()) {
+                // Tách theo dấu ',' và loại bỏ khoảng trắng thừa
+                for (String note : currentText.split(",")) {
+                    currentNotes.add(note.trim());
+                }
+            }
+
+            // Thêm các nốt mới nếu chưa có
+            for (String newNote : newNotes) {
+                if (!currentNotes.contains(newNote)) {
+                    currentNotes.add(newNote);
+                }
+            }
+
+            txtnotcuoi.setText(String.join(", ", currentNotes));
+        }
+    }//GEN-LAST:event_btnnotcuoiActionPerformed
 
     public class NoteSelectorDialog extends JDialog {
 
