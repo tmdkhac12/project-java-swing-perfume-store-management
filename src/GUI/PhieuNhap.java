@@ -58,8 +58,6 @@ public class PhieuNhap extends javax.swing.JPanel {
         pnlTop = new javax.swing.JPanel();
         btnThemPN = new javax.swing.JButton();
         btnChiTietPN = new javax.swing.JButton();
-        btnXoaPN = new javax.swing.JButton();
-        btnXuatExcelPN = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtTimKiem = new javax.swing.JTextField();
         btnLamMoi = new javax.swing.JButton();
@@ -105,24 +103,6 @@ public class PhieuNhap extends javax.swing.JPanel {
             }
         });
         pnlTop.add(btnChiTietPN);
-
-        btnXoaPN.setText("Xóa");
-        btnXoaPN.setToolTipText("");
-        btnXoaPN.setEnabled(false);
-        btnXoaPN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnXoaPNActionPerformed(evt);
-            }
-        });
-        pnlTop.add(btnXoaPN);
-
-        btnXuatExcelPN.setText("Xuất excel");
-        btnXuatExcelPN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnXuatExcelPNActionPerformed(evt);
-            }
-        });
-        pnlTop.add(btnXuatExcelPN);
 
         jLabel1.setText("Tìm kiếm :");
         pnlTop.add(jLabel1);
@@ -380,29 +360,6 @@ public class PhieuNhap extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnChiTietPNActionPerformed
 
-    private void btnXoaPNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaPNActionPerformed
-        PhieuNhapDTO selectedPhieuNhap = this.getSelectedRowPhieuNhap(); // Lấy dòng được chọn
-        if (selectedPhieuNhap != null) {
-            int id = selectedPhieuNhap.getId();
-
-            int confirm = JOptionPane.showConfirmDialog(this, "Bạn có chắc chắn muốn xóa phiếu nhập này?", "Xác nhận xóa", JOptionPane.YES_NO_OPTION);
-            if (confirm == JOptionPane.YES_OPTION) {
-                if (phieuNhapBUS.deletePhieuNhap(id)) {
-                    JOptionPane.showMessageDialog(this, "Xóa phiếu nhập thành công", "Thông báo", JOptionPane.INFORMATION_MESSAGE);
-                    updateTable(null, 2); // load lại bảng
-                } else {
-                    JOptionPane.showMessageDialog(this, "Xóa phiếu nhập thất bại", "Lỗi", JOptionPane.ERROR_MESSAGE);
-                }
-            }
-        } else {
-            JOptionPane.showMessageDialog(this, "Vui lòng chọn phiếu nhập muốn xóa");
-        }
-    }//GEN-LAST:event_btnXoaPNActionPerformed
-
-    private void btnXuatExcelPNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXuatExcelPNActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnXuatExcelPNActionPerformed
-
     private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
 
     }//GEN-LAST:event_txtTimKiemActionPerformed
@@ -624,9 +581,9 @@ public class PhieuNhap extends javax.swing.JPanel {
 
     private void addIcon() {
         btnThemPN.setIcon(new FlatSVGIcon("./res/icon/add.svg"));
-        btnXoaPN.setIcon(new FlatSVGIcon("./res/icon/delete.svg"));
+        
         btnChiTietPN.setIcon(new FlatSVGIcon("./res/icon/detail.svg"));
-        btnXuatExcelPN.setIcon(new FlatSVGIcon("./res/icon/export_excel.svg"));
+        
         btnLamMoi.setIcon(new FlatSVGIcon("./res/icon/refresh.svg"));
     }
 
@@ -685,8 +642,6 @@ public class PhieuNhap extends javax.swing.JPanel {
     private javax.swing.JButton btnLamMoi;
     private javax.swing.JButton btnThemPN;
     private javax.swing.JButton btnTimKiem;
-    private javax.swing.JButton btnXoaPN;
-    private javax.swing.JButton btnXuatExcelPN;
     public javax.swing.JComboBox<String> comboboxNCC;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
