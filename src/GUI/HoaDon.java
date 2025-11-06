@@ -57,8 +57,6 @@ public class HoaDon extends javax.swing.JPanel {
         pnlTop = new javax.swing.JPanel();
         btnThemPX = new javax.swing.JButton();
         btnChiTietPX = new javax.swing.JButton();
-        btnXoaHD = new javax.swing.JButton();
-        btnXuatExcelPX = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtTimKiem = new javax.swing.JTextField();
         btnLamMoi = new javax.swing.JButton();
@@ -106,24 +104,6 @@ public class HoaDon extends javax.swing.JPanel {
             }
         });
         pnlTop.add(btnChiTietPX);
-
-        btnXoaHD.setText("Xóa");
-        btnXoaHD.setEnabled(false);
-        btnXoaHD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnHuyHDActionPerformed(evt);
-            }
-        });
-        pnlTop.add(btnXoaHD);
-        btnXoaHD.getAccessibleContext().setAccessibleName("Hủy");
-
-        btnXuatExcelPX.setText("Xuất excel");
-        btnXuatExcelPX.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnXuatExcelPXActionPerformed(evt);
-            }
-        });
-        pnlTop.add(btnXuatExcelPX);
 
         jLabel1.setText("Tìm kiếm :");
         pnlTop.add(jLabel1);
@@ -243,9 +223,9 @@ public class HoaDon extends javax.swing.JPanel {
             pnlLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlLocLayout.createSequentialGroup()
                 .addGroup(pnlLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(pnlLocLayout.createSequentialGroup()
-                            .addContainerGap()
+                    .addGroup(pnlLocLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(pnlLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(pnlLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(pnlLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(txtmaxprice)
@@ -258,10 +238,8 @@ public class HoaDon extends javax.swing.JPanel {
                                             .addComponent(comboboxNV, javax.swing.GroupLayout.Alignment.TRAILING, 0, 248, Short.MAX_VALUE))
                                         .addComponent(txtnhacungcap3, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addComponent(txtnhacungcap4, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtnhacungcap5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlLocLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(txtngaydau)))
+                                .addComponent(txtnhacungcap5, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtngaydau, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(pnlLocLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(pnlLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -376,14 +354,6 @@ public class HoaDon extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btnChiTietHDActionPerformed
 
-
-    private void btnHuyHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHuyHDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnHuyHDActionPerformed
-
-    private void btnXuatExcelPXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXuatExcelPXActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnXuatExcelPXActionPerformed
 
     private void txtTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTimKiemActionPerformed
         // TODO add your handling code here:
@@ -564,9 +534,9 @@ public class HoaDon extends javax.swing.JPanel {
 
     private void addIcon() {
         btnThemPX.setIcon(new FlatSVGIcon("./res/icon/add.svg"));
-        btnXoaHD.setIcon(new FlatSVGIcon("./res/icon/delete.svg"));
+        
         btnChiTietPX.setIcon(new FlatSVGIcon("./res/icon/detail.svg"));
-        btnXuatExcelPX.setIcon(new FlatSVGIcon("./res/icon/export_excel.svg"));
+        
         btnLamMoi.setIcon(new FlatSVGIcon("./res/icon/refresh.svg"));
     }
 
@@ -627,8 +597,6 @@ public class HoaDon extends javax.swing.JPanel {
     private javax.swing.JButton btnLamMoi;
     private javax.swing.JButton btnThemPX;
     private javax.swing.JButton btnTimKiem;
-    private javax.swing.JButton btnXoaHD;
-    private javax.swing.JButton btnXuatExcelPX;
     private javax.swing.JComboBox<String> comboboxKH;
     private javax.swing.JComboBox<String> comboboxNV;
     private javax.swing.JLabel jLabel1;
